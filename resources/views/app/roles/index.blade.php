@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
-  <a class="badge bg-label-primary me-1 float-end" href="/banks/create"
+  <a class="badge bg-label-primary me-1 float-end" href="/v1/roles/create"
     ><i class="bx bx-plus me-1"></i> Add Data</a
   >
   <h4 class="fw-bold @if(!session('success') || !session('danger')) py-3 mb-4 @endif"><span class="text-muted fw-light">Master /</span> {{ $title }}</h4>
@@ -26,8 +26,7 @@
         <thead>
           <tr>
             <th class="text-center">No</th>
-            <th>Bank Code</th>
-            <th>Bank Name</th>
+            <th>Role Name</th>
             <th>Updated At</th>
             <th>Actions</th>
           </tr>
@@ -36,14 +35,13 @@
           @foreach ($data as $item)
             <tr>
               <td class="text-center">{{ $loop->iteration }}</td>
-              <td>{{ $item->bank_code }}</td>
-              <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ $item->bank_name }}</strong></td>
+              <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ $item->role_name }}</strong></td>
               <td>{{ $item->updated_at }}</td>
               <td>
-                <form action="/banks/{{ $item->id }}" onsubmit="return confirm('Are you sure?')" method="post">
+                <form action="/v1/roles/{{ $item->id }}" onsubmit="return confirm('Are you sure?')" method="post">
                   @csrf
                   @method('DELETE')
-                  <a class="badge bg-label-info me-1" href="/banks/{{ $item->id }}/edit"
+                  <a class="badge bg-label-info me-1" href="/v1/roles/{{ $item->id }}/edit"
                     ><i class="bx bx-edit-alt me-1"></i> Edit</a
                   >
                   <button type="submit" class="badge bg-label-danger me-1 border-0">
@@ -60,5 +58,5 @@
   </div>
   <!--/ Basic Bootstrap Table -->
 
-</div>    
+</div>
 @endsection

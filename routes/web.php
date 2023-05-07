@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\HomeController as AdminHomeController;
+use App\Http\Controllers\Admin\RoleController as AdminRoleController;
+use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
+use App\Http\Controllers\Admin\SettingController as AdminSettingController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -20,4 +24,20 @@ Route::get('/', function () {
 
 Auth::routes(['register' => false]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware('auth')->group(function(){
+    // for operator
+    Route::prefix('v1')->group(function(){
+        Route::get('/home', [AdminHomeController::class, 'index']);
+        Route::resource('roles', AdminRoleController::class);
+        Route::resource('categories', AdminCategoryController::class);
+
+        // setting and accounts
+        Route::get('accounts', [AdminSettingController::class, 'account']);
+        Route::get('settings', [AdminSettingController::class, 'setting']);
+        Route::put('settings/update_password', [AdminSettingController::class, 'update_password']);
+    });
+
+    Route::prefix('m1')->group(function(){
+        Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
+    });
+});

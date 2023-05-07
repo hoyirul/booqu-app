@@ -21,8 +21,8 @@
       <div class="card mb-4">
         <h5 class="card-header">{{ $title }} Password</h5>
         <div class="card-body demo-vertical-spacing demo-only-element">
-          
-          <form action="/settings/update_password" method="POST">
+
+          <form action="/v1/settings/update_password" method="POST">
             @csrf
             @method('PUT')
             <div class="form-password-toggle mb-3">
@@ -90,19 +90,19 @@
                 @error('password_confirmation')<div class="invalid-feedback ml-1">{{ $message }}</div>@enderror
               </div>
             </div>
-          
+
             <button type="submit" class="btn btn-primary">Update Password</button>
           </form>
-        
+
         </div>
       </div>
     </div>
 
-    <div class="col-md-6">
+    {{-- <div class="col-md-6">
       <div class="card mb-4">
         <h5 class="card-header">{{ $title }} Printer</h5>
         <div class="card-body demo-vertical-spacing demo-only-element">
-          
+
           <form action="/settings/update_printer" method="POST">
             @csrf
             @method('PUT')
@@ -140,13 +140,13 @@
                 @error('printer')<div class="invalid-feedback ml-1">Field is required!</div>@enderror
               </div>
             </div>
-          
+
             <button type="submit" class="btn btn-primary">Update Printer</button>
           </form>
-        
+
         </div>
       </div>
-    </div>
+    </div> --}}
 
   </div>
 </div>

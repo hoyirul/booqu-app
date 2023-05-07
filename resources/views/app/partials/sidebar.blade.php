@@ -82,37 +82,37 @@
       </a>
       <ul class="menu-sub">
         <li class="menu-item {{ ($title == 'Accounts') ? 'active' : '' }}">
-          <a href="/accounts" class="menu-link">
+          <a href="/v1/accounts" class="menu-link">
             <div data-i18n="Account">Account</div>
           </a>
         </li>
         <li class="menu-item {{ ($title == 'Settings') ? 'active' : '' }}">
-          <a href="/settings" class="menu-link">
+          <a href="/v1/settings" class="menu-link">
             <div data-i18n="Settings">Settings</div>
           </a>
         </li>
       </ul>
     </li>
 
-    <li class="menu-item {{ ($title == 'Chilli Types' || $title == 'Chilies' || $title == 'Banks') ? 'active open' : '' }}">
+    <li class="menu-item {{ ($title == 'Banners' || $title == 'Categories' || $title == 'Roles') ? 'active open' : '' }}">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-cube-alt"></i>
         <div data-i18n="Master">Master</div>
       </a>
       <ul class="menu-sub">
-        <li class="menu-item {{ ($title == 'Chilli Types') ? 'active' : '' }}">
-          <a href="/types" class="menu-link">
-            <div data-i18n="Types">Types</div>
+        <li class="menu-item {{ ($title == 'Banners') ? 'active' : '' }}">
+          <a href="/v1/banners" class="menu-link">
+            <div data-i18n="Banners">Banners</div>
           </a>
         </li>
-        <li class="menu-item {{ ($title == 'Chilies') ? 'active' : '' }}">
-          <a href="/chilies" class="menu-link">
-            <div data-i18n="Chillies">Chillies</div>
+        <li class="menu-item {{ ($title == 'Categories') ? 'active' : '' }}">
+          <a href="/v1/categories" class="menu-link">
+            <div data-i18n="Categories">Categories</div>
           </a>
         </li>
-        <li class="menu-item {{ ($title == 'Banks') ? 'active' : '' }}">
-          <a href="/banks" class="menu-link">
-            <div data-i18n="Banks">Banks</div>
+        <li class="menu-item {{ ($title == 'Roles') ? 'active' : '' }}">
+          <a href="/v1/roles" class="menu-link">
+            <div data-i18n="Roles">Roles</div>
           </a>
         </li>
       </ul>
