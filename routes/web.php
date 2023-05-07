@@ -38,6 +38,6 @@ Route::middleware('auth')->group(function(){
     });
 
     Route::prefix('m1')->group(function(){
-        Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
+        Route::get('/home', [App\Http\Controllers\HomeController::class, 'member']);
     });
 });

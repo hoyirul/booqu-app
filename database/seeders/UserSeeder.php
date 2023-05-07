@@ -27,6 +27,21 @@ class UserSeeder extends Seeder
                 'remember_token' => null,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
+            ],
+        );
+
+        DB::table('users')->insert(
+            [
+                'name' => 'Memberhip',
+                'email' => 'member@booqu.id',
+                'email_verified_at' => null,
+                'password' => Hash::make('password'),
+                'membership_id' => 2,
+                'role_id' => 2,
+                'is_active' => 'active',
+                'remember_token' => null,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
             ]
         );
     }
