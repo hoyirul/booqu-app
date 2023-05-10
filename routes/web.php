@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\BannerController as AdminBannerController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\RoleController as AdminRoleController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
+use App\Http\Controllers\Admin\MembershipController as AdminMembershipController;
 use App\Http\Controllers\Admin\SettingController as AdminSettingController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +35,7 @@ Route::middleware('auth')->group(function(){
                 Route::resource('roles', AdminRoleController::class);
                 Route::resource('categories', AdminCategoryController::class);
                 Route::resource('banners', AdminBannerController::class);
+                Route::resource('memberships', AdminMembershipController::class);
 
                 // setting and accounts
                 Route::get('accounts', [AdminSettingController::class, 'account']);

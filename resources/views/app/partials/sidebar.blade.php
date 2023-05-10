@@ -66,7 +66,7 @@
   <ul class="menu-inner py-1">
     <!-- Dashboard -->
     <li class="menu-item {{ ($title == 'Dashboard') ? 'active' : '' }}">
-      <a href="/" class="menu-link">
+      <a href="/v1/home" class="menu-link">
         <i class="menu-icon tf-icons bx bx-home-circle"></i>
         <div data-i18n="Analytics">Dashboard</div>
       </a>
@@ -118,29 +118,34 @@
       </ul>
     </li>
     <!-- Components -->
-    <li class="menu-header small text-uppercase"><span class="menu-header-text">Transaction</span></li>
+    <li class="menu-header small text-uppercase"><span class="menu-header-text">Sub Master</span></li>
     <!-- Cards -->
-    <li class="menu-item {{ ($title == 'Members') ? 'active' : '' }}">
-      <a href="/v1/members" class="menu-link">
+    <li class="menu-item {{ ($title == 'Membership') ? 'active' : '' }}">
+      <a href="/v1/memberships" class="menu-link">
         <i class="menu-icon tf-icons bx bx-collection"></i>
-        <div data-i18n="Basic">Members</div>
+        <div data-i18n="Basic">Membership</div>
       </a>
     </li>
     <!-- User interface -->
     <li class="menu-item {{ ($title == 'Purchases' || $title == 'Purchase Orders') ? 'active open' : '' }}">
       <a href="javascript:void(0)" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-box"></i>
-        <div data-i18n="Purchases">Purchases</div>
+        <div data-i18n="Purchases">Book Master</div>
       </a>
       <ul class="menu-sub">
         <li class="menu-item {{ ($title == 'Purchases') ? 'active' : '' }}">
           <a href="/purchases" class="menu-link">
-            <div data-i18n="Purchases">Purchases</div>
+            <div data-i18n="Purchases">Books</div>
           </a>
         </li>
         <li class="menu-item {{ ($title == 'Purchase Orders') ? 'active' : '' }}">
           <a href="/purchase_orders" class="menu-link">
-            <div data-i18n="Purchases Orders ">Purchases Orders </div>
+            <div data-i18n="Purchases Orders ">Book Ratings </div>
+          </a>
+        </li>
+        <li class="menu-item {{ ($title == 'Purchase Orders') ? 'active' : '' }}">
+          <a href="/purchase_orders" class="menu-link">
+            <div data-i18n="Purchases Orders ">Most Viewed </div>
           </a>
         </li>
       </ul>
@@ -149,17 +154,22 @@
     <li class="menu-item {{ ($title == 'Sales' || $title == 'Sale Orders') ? 'active open' : '' }}">
       <a href="javascript:void(0)" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-copy"></i>
-        <div data-i18n="Sales">Sales</div>
+        <div data-i18n="Sales">Review Master</div>
       </a>
       <ul class="menu-sub">
         <li class="menu-item {{ ($title == 'Sales') ? 'active' : '' }}">
           <a href="/sales" class="menu-link">
-            <div data-i18n="Sales">Sales</div>
+            <div data-i18n="Sales">Book Reviews</div>
           </a>
         </li>
         <li class="menu-item {{ ($title == 'Sale Orders') ? 'active' : '' }}">
           <a href="/sale_orders" class="menu-link">
-            <div data-i18n="Sales Orders">Sales Orders</div>
+            <div data-i18n="Sales Orders">Review Ratings</div>
+          </a>
+        </li>
+        <li class="menu-item {{ ($title == 'Sale Orders') ? 'active' : '' }}">
+          <a href="/sale_orders" class="menu-link">
+            <div data-i18n="Sales Orders">Most Viewed</div>
           </a>
         </li>
       </ul>

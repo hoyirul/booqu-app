@@ -53,8 +53,8 @@
                   class="form-control @error('is_active') is-invalid @enderror"
                   placeholder="Number of Slide"
                   aria-label="Number of Slide">
-                    <option value="active">Active</option>
-                    <option value="inactive">Inactive</option>
+                    <option value="active" {{ (old('is_active') == 'active') ? 'selected' : '' }}>Active</option>
+                    <option value="inactive" {{ (old('is_active') == 'inactive') ? 'selected' : '' }}>Inactive</option>
                 </select>
                 @error('is_active')<div class="invalid-feedback ml-1">Field is required!</div>@enderror
               </div>
