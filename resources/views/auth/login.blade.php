@@ -67,7 +67,16 @@
     <!-- /Logo -->
     <h4 class="mb-2">Welcome to Terra! 👋</h4>
     <p class="mb-4">Please sign-in to your account and start the adventure</p>
-
+    @if(session('success'))
+      <div class="alert alert-info">
+        {{session('success')}}
+      </div>
+    @endif
+    @if(session('danger'))
+      <div class="alert alert-danger">
+        {{session('danger')}}
+      </div>
+    @endif
     <form method="POST" class="mb-3" action="{{ route('login') }}">
       @csrf
       <div class="mb-3">

@@ -10,7 +10,7 @@
       <div class="card mb-4">
         <h5 class="card-header">{{ $title }}</h5>
         <div class="card-body demo-vertical-spacing demo-only-element">
-          
+
           <form action="#" method="POST">
             <div class="form-password-toggle mb-3">
               <label for="name" class="form-label">Name</label>
@@ -49,26 +49,26 @@
             </div>
 
             <div class="form-password-toggle mb-3">
-              <label for="printer" class="form-label">Printer</label>
+              <label for="role_id" class="form-label">Access</label>
               <div class="input-group">
                 <span class="input-group-text" id="basic-addon11">#</span>
                 <input
                   readonly
                   type="text"
-                  name="printer"
-                  class="form-control @error('printer') is-invalid @enderror"
-                  placeholder="Printer"
-                  aria-label="Printer"
+                  name="role_id"
+                  class="form-control @error('role_id') is-invalid @enderror"
+                  placeholder="role_id"
+                  aria-label="role_id"
                   aria-describedby="basic-addon11"
-                  value="{{ $data->printer }}"
+                  value="{{ $data->role->role_name }}"
                 />
-                @error('printer')<div class="invalid-feedback ml-1">Field is required!</div>@enderror
+                @error('role_id')<div class="invalid-feedback ml-1">Field is required!</div>@enderror
               </div>
             </div>
-          
+
             {{-- <button type="submit" class="btn btn-primary">Submit</button> --}}
           </form>
-        
+
         </div>
       </div>
     </div>
