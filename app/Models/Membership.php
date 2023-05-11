@@ -10,7 +10,7 @@ class Membership extends Model
     use HasFactory;
 
     protected $fillable = [
-        'package', 'description', 'price', 'unit'
+        'package', 'description', 'price', 'max_device', 'unit'
     ];
 
     public function user(){

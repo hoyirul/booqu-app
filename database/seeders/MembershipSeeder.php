@@ -19,6 +19,7 @@ class MembershipSeeder extends Seeder
                 'package' => 'Administrator',
                 'description' => '-',
                 'price' => 0,
+                'max_device' => 5,
                 'unit' => 'tahun',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
@@ -27,6 +28,7 @@ class MembershipSeeder extends Seeder
                 'package' => 'Bronze',
                 'description' => '-',
                 'price' => 100000,
+                'max_device' => 2,
                 'unit' => 'tahun',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
@@ -35,6 +37,7 @@ class MembershipSeeder extends Seeder
                 'package' => 'Silver',
                 'description' => '-',
                 'price' => 120000,
+                'max_device' => 3,
                 'unit' => 'tahun',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
