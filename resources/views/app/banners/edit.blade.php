@@ -51,7 +51,7 @@
             </div>
 
             <div class="form-password-toggle mb-3">
-              <label for="banner_photo" class="form-label">File of Slide</label>
+              <label for="banner_photo" class="form-label">File of Slide | <span class="text-danger">Max: 1 MB</span></label>
               <div class="input-group">
                 <span class="input-group-text" id="basic-addon11">#</span>
                 <input

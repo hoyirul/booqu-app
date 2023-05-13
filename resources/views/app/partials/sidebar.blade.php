@@ -132,15 +132,15 @@
       </a>
     </li>
     <!-- User interface -->
-    <li class="menu-item {{ ($title == 'Purchases' || $title == 'Purchase Orders') ? 'active open' : '' }}">
+    <li class="menu-item {{ ($title == 'Master Books' || $title == 'Purchase Orders') ? 'active open' : '' }}">
       <a href="javascript:void(0)" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-box"></i>
-        <div data-i18n="Purchases">Book Master</div>
+        <div data-i18n="Master Books">Book Master</div>
       </a>
       <ul class="menu-sub">
-        <li class="menu-item {{ ($title == 'Purchases') ? 'active' : '' }}">
-          <a href="/purchases" class="menu-link">
-            <div data-i18n="Purchases">Books</div>
+        <li class="menu-item {{ ($title == 'Master Books') ? 'active' : '' }}">
+          <a href="/v1/books" class="menu-link">
+            <div data-i18n="Master Books">Books</div>
           </a>
         </li>
         <li class="menu-item {{ ($title == 'Purchase Orders') ? 'active' : '' }}">
