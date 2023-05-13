@@ -93,7 +93,7 @@
               </div>
             </div>
             <div class="form-password-toggle mb-3">
-              <label for="book_cover" class="form-label">Book Cover</label>
+              <label for="book_cover" class="form-label">Book Cover | <span class="text-danger">Max: 1 MB</span></label>
               <div class="input-group">
                 <span class="input-group-text" id="basic-addon11">#</span>
                 <input
