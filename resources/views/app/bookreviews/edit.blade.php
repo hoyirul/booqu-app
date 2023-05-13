@@ -52,7 +52,7 @@
             <div class="form-password-toggle mb-3">
               <label for="embeded_link" class="form-label">Embeded Link</label>
               <div class="input-group">
-                <span class="input-group-text" id="basic-addon11">#</span>
+                <span class="input-group-text" id="basic-addon11">https://www.youtube.com/embed/</span>
                 <input
                   type="text"
                   name="embeded_link"

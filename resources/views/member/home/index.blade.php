@@ -6,7 +6,8 @@
 
     <div id="default-carousel" class="relative" data-carousel="static">
       <!-- Carousel wrapper -->
-      <div class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-96 2xl:h-96">
+      {{-- sm:h-64 xl:h-96 2xl:h-96 --}}
+      <div class="overflow-hidden relative h-56 sm:h-64 md:h-[24rem] lg:h-[28rem] xl:h-[36rem] 2xl:h-[44rem]">
         @foreach ($banners as $item)
           <div class="hidden duration-300 ease-in-out" data-carousel-item>
             <span
@@ -113,73 +114,63 @@
 
 </div>
 
-<div class="bg-white shadow-lg border border-gray-100 rounded-lg px-4 py-6 mx-4 my-4">
-  <div class="h-40 bg-gray-400 w-40 mt-8 block mx-auto rounded-full"></div>
-  <div class="h-2 bg-gray-300 w-96 mt-6 block mx-auto rounded-sm"></div>
-  <div class="h-2 bg-gray-300 w-96 mt-1 block mx-auto rounded-sm"></div>
-  <div class="h-4 bg-gray-400 w-80 mt-3 block mx-auto rounded-sm"></div>
+<div class="bg-gradient-to-tr from-cyan-500 to-green-400 shadow-lg border border-gray-100 rounded-lg px-4 py-6 mx-4 my-4">
+  <div class="overflow-hidden h-40 bg-gray-400 w-40 mt-8 block mx-auto rounded-full">
+    <img src="{{ asset('member/img/section/dediek-photo.jpg') }}" alt="">
+  </div>
+  <p class="text-white px-6 sm:px-6 md:px-10 lg:px-24 xl:px-36 2xl:48 mt-4">
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum repellendus sint maiores debitis numquam fugiat. Id quisquam, velit enim exercitationem quo error est tempora praesentium quam modi reiciendis totam deserunt?"
+  </p>
+  <h3 class="text-white montserrat-bold mt-4">Dediek Tri Kurniawan - Booqu.id</h3>
 </div>
 
 <div class="mt-8 px-4 flex justify-between">
-  <div class="py-4 bg-gray-400 w-40 rounded-md"></div>
-  <a href="/reviews.html" class="w-48 py-2 bg-green-600 rounded-lg text-white montserrat-medium text-sm cursor-pointer">Lihat Semua
+  <h1 class="text-gray-600 montserrat-semibold text-2xl">Review Buku</h1>
+  <a href="/book.html" class="w-48 py-2 bg-green-600 rounded-lg text-white montserrat-medium text-sm cursor-pointer">Lihat Semua
   </a>
 </div>
 
-<div class="bg-white shadow-lg rounded-lg px-4 py-6 mx-4 my-4">
-  <div class="mx-auto h-80 bg-gray-200 rounded-md"></div>
+<div class="px-4 py-6">
+  <div class="overflow-hidden bg-white h-[36rem] shadow-lg rounded-lg">
+    <iframe src="{{ $descbookreviews->embeded_link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" class="top-0 left-0 w-full h-full" allowfullscreen></iframe>
+  </div>
 </div>
 
 <div class="grid grid-cols-6 gap-4 mt-2">
 
-  <div class="col-span-6 sm:col-span-6 md:col-span-3 lg:col-span-2 xl:col-span-2">
-    <div class="bg-white shadow-lg rounded-lg px-4 py-6 mx-4 my-4">
-      <div class="mx-auto h-40 bg-gray-200 rounded-md"></div>
-      <div class="h-4 bg-gray-400 w-40 mt-8 block mx-auto rounded-sm"></div>
-      <div class="h-2 bg-gray-300 w-64 md:w-20 sm:w-20 mt-2 block mx-auto rounded-sm"></div>
+  @foreach ($bookreviews as $item)
+    <div class="col-span-6 sm:col-span-6 md:col-span-3 lg:col-span-2 xl:col-span-2">
+      <div class="px-4 py-6">
+        <div class="overflow-hidden bg-white shadow-lg rounded-lg h-[16rem]">
+          <iframe src="{{ $item->embeded_link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" class="top-0 left-0 w-full h-full" allowfullscreen></iframe>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <div class="col-span-6 sm:col-span-6 md:col-span-3 lg:col-span-2 xl:col-span-2">
-    <div class="bg-white shadow-lg rounded-lg px-4 py-6 mx-4 my-4">
-      <div class="mx-auto h-40 bg-gray-200 rounded-md"></div>
-      <div class="h-4 bg-gray-400 w-40 mt-8 block mx-auto rounded-sm"></div>
-      <div class="h-2 bg-gray-300 w-64 md:w-20 sm:w-20 mt-2 block mx-auto rounded-sm"></div>
-    </div>
-  </div>
-
-  <div class="col-span-6 sm:col-span-6 md:col-span-3 lg:col-span-2 xl:col-span-2">
-    <div class="bg-white shadow-lg rounded-lg px-4 py-6 mx-4 my-4">
-      <div class="mx-auto h-40 bg-gray-200 rounded-md"></div>
-      <div class="h-4 bg-gray-400 w-40 mt-8 block mx-auto rounded-sm"></div>
-      <div class="h-2 bg-gray-300 w-64 md:w-20 sm:w-20 mt-2 block mx-auto rounded-sm"></div>
-    </div>
-  </div>
+  @endforeach
 
 </div>
 
 <div class="text-center max-w-lg mx-auto mt-8">
-  <div class="h-4 bg-gray-400 w-80 block mx-auto rounded-sm"></div>
-  <div class="h-2 bg-gray-300 w-80 mt-2 block mx-auto rounded-sm"></div>
+  <h1 class="text-gray-600 montserrat-semibold text-2xl">Kemitraan dan Kolaborasi</h1>
+  <p class="text-gray-400 montserrat-regular font-sm mt-2">Berikut adalah kemitraan dan kolaborasi dari Booqu.ID</p>
 </div>
 
-<div class="grid grid-cols-6 gap-4 mt-2">
-
-  <div class="col-span-6 sm:col-span-6 md:col-span-3 lg:col-span-2 xl:col-span-2">
-    <div class="bg-white shadow-lg rounded-lg px-4 py-6 mx-4 my-4">
-      <div class="mx-auto h-40 bg-gray-200 rounded-md"></div>
+<div class="max-w-lg mx-auto mt-2">
+  <div class="grid grid-cols-6">
+    <div class="col-span-6 sm:col-span-6 md:col-span-2 lg:col-span-2 xl:col-span-2">
+      <div class="bg-transparent rounded-lg px-4 py-6 mx-4 my-4">
+        <img src="{{ asset('member/img/logo/um-logo.png') }}" class="w-full h-auto" alt="">
+      </div>
     </div>
-  </div>
-
-  <div class="col-span-6 sm:col-span-6 md:col-span-3 lg:col-span-2 xl:col-span-2">
-    <div class="bg-white shadow-lg rounded-lg px-4 py-6 mx-4 my-4">
-      <div class="mx-auto h-40 bg-gray-200 rounded-md"></div>
+    <div class="col-span-6 sm:col-span-6 md:col-span-2 lg:col-span-2 xl:col-span-2">
+      <div class="bg-transparent rounded-lg px-4 py-6 mx-4 my-4">
+        <img src="{{ asset('member/img/logo/learning-um.png') }}" class="w-full h-auto" alt="">
+      </div>
     </div>
-  </div>
-
-  <div class="col-span-6 sm:col-span-6 md:col-span-3 lg:col-span-2 xl:col-span-2">
-    <div class="bg-white shadow-lg rounded-lg px-4 py-6 mx-4 my-4">
-      <div class="mx-auto h-40 bg-gray-200 rounded-md"></div>
+    <div class="col-span-6 sm:col-span-6 md:col-span-2 lg:col-span-2 xl:col-span-2">
+      <div class="bg-transparent rounded-lg px-4 py-6 mx-4 my-4">
+        <img src="{{ asset('member/img/logo/melijo-logo.png') }}" class="w-full h-auto" alt="">
+      </div>
     </div>
   </div>
 </div>

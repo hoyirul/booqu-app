@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Banner;
 use App\Models\Book;
 use App\Models\BookRating;
+use App\Models\BookReview;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,10 +15,14 @@ class HomeController extends Controller
         $banners = Banner::all();
         $books = Book::all();
         $descbooks = Book::orderBy('id', 'DESC')->get();
+        $descbookreviews = BookReview::orderBy('id', 'DESC')->first();
+        $bookreviews = BookReview::orderBy('id', 'ASC')->where('id', '!=', $descbookreviews->id)->get();
         return view('member.home.index', compact([
             'banners',
             'books',
             'descbooks',
+            'bookreviews',
+            'descbookreviews',
         ]));
     }
 
