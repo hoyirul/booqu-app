@@ -45,3 +45,7 @@ body{
 .montserrat-extrabold {
     font-family: 'Montserrat-ExtraBold';
 }
+
+.h-full{
+    height: 30rem;
+}

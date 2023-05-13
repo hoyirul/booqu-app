@@ -7,6 +7,7 @@ use App\Models\Membership;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class MembershipController extends Controller
 {
@@ -57,7 +58,7 @@ class MembershipController extends Controller
         User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => $request->password,
+            'password' => Hash::make($request->password),
             'membership_id' => $request->membership_id,
             'role_id' => $request->role_id,
             'is_active' => $request->is_active,

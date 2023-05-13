@@ -41,7 +41,7 @@
               <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ $item->user->name }}</strong></td>
               <td>{{ $item->numbers }}</td>
               <td>{{ $item->is_active }}</td>
-              <td><a href="/storage/{{ $item->banner_photo }}" target="_blank">file</a></td>
+              <td><a href="/storage/{{ $item->banner_photo }}" class="badge bg-label-primary" target="_blank">file</a></td>
               <td>{{ $item->updated_at }}</td>
               <td>
                 <form action="/v1/banners/{{ $item->id }}" onsubmit="return confirm('Are you sure?')" method="post">
