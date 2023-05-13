@@ -94,7 +94,7 @@
       </ul>
     </li>
 
-    <li class="menu-item {{ ($title == 'Banners' || $title == 'Categories' || $title == 'Roles') ? 'active open' : '' }}">
+    <li class="menu-item {{ ($title == 'Banners' || $title == 'Categories' || $title == 'Roles' || $title == 'Member Packages') ? 'active open' : '' }}">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-cube-alt"></i>
         <div data-i18n="Master">Master</div>
@@ -103,6 +103,11 @@
         <li class="menu-item {{ ($title == 'Banners') ? 'active' : '' }}">
           <a href="/v1/banners" class="menu-link">
             <div data-i18n="Banners">Banners</div>
+          </a>
+        </li>
+        <li class="menu-item {{ ($title == 'Member Packages') ? 'active' : '' }}">
+          <a href="/v1/mastermembers" class="menu-link">
+            <div data-i18n="Member Packages">Member Packages</div>
           </a>
         </li>
         <li class="menu-item {{ ($title == 'Categories') ? 'active' : '' }}">

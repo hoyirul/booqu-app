@@ -15,8 +15,8 @@ class MasterMemberController extends Controller
      */
     public function index()
     {
-        $title = 'Master Members';
-        $data = Membership::withCount('user')->get();
+        $title = 'Member Packages';
+        $data = Membership::withCount('user')->where('id', '!=', 1)->get();
         return view('app.mastermembers.index', compact('data', 'title'));
     }
 
@@ -27,7 +27,7 @@ class MasterMemberController extends Controller
      */
     public function create()
     {
-        $title = 'Master Members';
+        $title = 'Member Packages';
         return view('app.mastermembers.create', compact('title'));
     }
 
@@ -44,7 +44,6 @@ class MasterMemberController extends Controller
             'description' => 'required',
             'price' => 'required',
             'max_device' => 'required',
-            'unit' => 'required',
         ]);
 
         Membership::create([
@@ -52,7 +51,7 @@ class MasterMemberController extends Controller
             'description' => $request->description,
             'price' => $request->price,
             'max_device' => $request->max_device,
-            'unit' => $request->unit,
+            'unit' => 'tahun',
         ]);
 
         return redirect('/v1/mastermembers')->with('success', "Data added successfully!");
@@ -66,7 +65,7 @@ class MasterMemberController extends Controller
      */
     public function show($id)
     {
-        $title = 'Master Members';
+        $title = 'Member Packages';
         $data = Membership::where('id', $id)->first();
         return view('app.mastermembers.show', compact('title', 'data'));
     }
@@ -79,7 +78,7 @@ class MasterMemberController extends Controller
      */
     public function edit($id)
     {
-        $title = 'Master Members';
+        $title = 'Member Packages';
         $data = Membership::where('id', $id)->first();
         return view('app.mastermembers.edit', compact('title', 'data'));
     }
@@ -98,7 +97,6 @@ class MasterMemberController extends Controller
             'description' => 'required',
             'price' => 'required',
             'max_device' => 'required',
-            'unit' => 'required',
         ]);
 
         Membership::where('id', $id)->update([
@@ -106,7 +104,7 @@ class MasterMemberController extends Controller
             'description' => $request->description,
             'price' => $request->price,
             'max_device' => $request->max_device,
-            'unit' => $request->unit,
+            'unit' => 'tahun',
         ]);
 
         return redirect('/v1/mastermembers')->with('success', "data changed successfully!");

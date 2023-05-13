@@ -78,11 +78,11 @@
                 Remember me
               </label>
             </div>
-            <div class="text-sm">
+            {{-- <div class="text-sm">
               <a href="#" class="text-sky-600 hover:text-sky-400">
                 Forgot your password?
               </a>
-            </div>
+            </div> --}}
           </div>
           <div>
             <button type="submit"
