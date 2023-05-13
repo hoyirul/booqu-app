@@ -3,6 +3,7 @@
 // Admin Controller
 use App\Http\Controllers\Admin\BannerController as AdminBannerController;
 use App\Http\Controllers\Admin\BookController as AdminBookController;
+use App\Http\Controllers\Admin\BookReviewController as AdminBookReviewController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\RoleController as AdminRoleController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
@@ -48,6 +49,7 @@ Route::middleware('auth')->group(function () {
           Route::resource('memberships', AdminMembershipController::class);
           Route::resource('mastermembers', AdminMasterMemberController::class);
           Route::resource('books', AdminBookController::class);
+          Route::resource('bookreviews', AdminBookReviewController::class);
 
           // setting and accounts
           Route::get('accounts', [AdminSettingController::class, 'account']);

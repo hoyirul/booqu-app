@@ -156,15 +156,15 @@
       </ul>
     </li>
     <!-- Extended components -->
-    <li class="menu-item {{ ($title == 'Sales' || $title == 'Sale Orders') ? 'active open' : '' }}">
+    <li class="menu-item {{ ($title == 'Book Reviews' || $title == 'Sale Orders') ? 'active open' : '' }}">
       <a href="javascript:void(0)" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-copy"></i>
-        <div data-i18n="Sales">Review Master</div>
+        <div data-i18n="Reviews Master">Review Master</div>
       </a>
       <ul class="menu-sub">
-        <li class="menu-item {{ ($title == 'Sales') ? 'active' : '' }}">
-          <a href="/sales" class="menu-link">
-            <div data-i18n="Sales">Book Reviews</div>
+        <li class="menu-item {{ ($title == 'Book Reviews') ? 'active' : '' }}">
+          <a href="/v1/bookreviews" class="menu-link">
+            <div data-i18n="Reviews">Book Reviews</div>
           </a>
         </li>
         <li class="menu-item {{ ($title == 'Sale Orders') ? 'active' : '' }}">
