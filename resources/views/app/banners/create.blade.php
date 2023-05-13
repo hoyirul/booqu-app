@@ -41,7 +41,7 @@
                   aria-describedby="basic-addon11"
                   value="{{ old('numbers') }}"
                 />
-                @error('numbers')<div class="invalid-feedback ml-1">Field is required!</div>@enderror
+                @error('numbers')<div class="invalid-feedback ml-1">{{ $message }}</div>@enderror
               </div>
             </div>
 
@@ -56,7 +56,7 @@
                     <option value="active" {{ (old('is_active') == 'active') ? 'selected' : '' }}>Active</option>
                     <option value="inactive" {{ (old('is_active') == 'inactive') ? 'selected' : '' }}>Inactive</option>
                 </select>
-                @error('is_active')<div class="invalid-feedback ml-1">Field is required!</div>@enderror
+                @error('is_active')<div class="invalid-feedback ml-1">{{ $message }}</div>@enderror
               </div>
             </div>
 
@@ -74,7 +74,7 @@
                   aria-describedby="basic-addon11"
                   value="{{ old('banner_photo') }}"
                 />
-                @error('banner_photo')<div class="invalid-feedback ml-1">Field is required!</div>@enderror
+                @error('banner_photo')<div class="invalid-feedback ml-1">{{ $message }}</div>@enderror
               </div>
             </div>
 

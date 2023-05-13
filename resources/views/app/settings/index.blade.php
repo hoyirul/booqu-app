@@ -39,7 +39,7 @@
                   aria-describedby="basic-addon11"
                   value="{{ $data->name }}"
                 />
-                @error('name')<div class="invalid-feedback ml-1">Field is required!</div>@enderror
+                @error('name')<div class="invalid-feedback ml-1">{{ $message }}</div>@enderror
               </div>
             </div>
 
@@ -55,7 +55,7 @@
                   aria-label="Old Password"
                   aria-describedby="basic-addon11"
                 />
-                @error('old_password')<div class="invalid-feedback ml-1">Field is required!</div>@enderror
+                @error('old_password')<div class="invalid-feedback ml-1">{{ $message }}</div>@enderror
               </div>
             </div> --}}
 
@@ -120,7 +120,7 @@
                   aria-describedby="basic-addon11"
                   value="{{ $data->name }}"
                 />
-                @error('name')<div class="invalid-feedback ml-1">Field is required!</div>@enderror
+                @error('name')<div class="invalid-feedback ml-1">{{ $message }}</div>@enderror
               </div>
             </div>
 
@@ -137,7 +137,7 @@
                   aria-describedby="basic-addon11"
                   value="{{ $data->printer }}"
                 />
-                @error('printer')<div class="invalid-feedback ml-1">Field is required!</div>@enderror
+                @error('printer')<div class="invalid-feedback ml-1">{{ $message }}</div>@enderror
               </div>
             </div>
 

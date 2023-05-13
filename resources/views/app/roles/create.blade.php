@@ -29,7 +29,7 @@
                   aria-describedby="basic-addon11"
                   value="{{ old('role_name') }}"
                 />
-                @error('role_name')<div class="invalid-feedback ml-1">Field is required!</div>@enderror
+                @error('role_name')<div class="invalid-feedback ml-1">{{ $message }}</div>@enderror
               </div>
             </div>
 

@@ -26,7 +26,7 @@
                   aria-describedby="basic-addon11"
                   value="{{ $data->name }}"
                 />
-                @error('name')<div class="invalid-feedback ml-1">Field is required!</div>@enderror
+                @error('name')<div class="invalid-feedback ml-1">{{ $message }}</div>@enderror
               </div>
             </div>
 
@@ -44,7 +44,7 @@
                   aria-describedby="basic-addon11"
                   value="{{ $data->email }}"
                 />
-                @error('email')<div class="invalid-feedback ml-1">Field is required!</div>@enderror
+                @error('email')<div class="invalid-feedback ml-1">{{ $message }}</div>@enderror
               </div>
             </div>
 
@@ -62,7 +62,7 @@
                   aria-describedby="basic-addon11"
                   value="{{ $data->role->role_name }}"
                 />
-                @error('role_id')<div class="invalid-feedback ml-1">Field is required!</div>@enderror
+                @error('role_id')<div class="invalid-feedback ml-1">{{ $message }}</div>@enderror
               </div>
             </div>
 

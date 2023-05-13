@@ -31,7 +31,7 @@
                   aria-describedby="basic-addon11"
                   value="{{ $data->category }}"
                 />
-                @error('category')<div class="invalid-feedback ml-1">Field is required!</div>@enderror
+                @error('category')<div class="invalid-feedback ml-1">{{ $message }}</div>@enderror
               </div>
             </div>
 
