@@ -13,16 +13,23 @@ class HomeController extends Controller
 {
     public function index(){
         $banners = Banner::all();
-        $books = Book::all();
-        $descbooks = Book::orderBy('id', 'DESC')->get();
+        $books = Book::limit(4)->get();
+        $descbooks = Book::orderBy('id', 'DESC')->limit(4)->get();
         $descbookreviews = BookReview::orderBy('id', 'DESC')->first();
-        $bookreviews = BookReview::orderBy('id', 'ASC')->where('id', '!=', $descbookreviews->id)->get();
+        $bookreviews = BookReview::orderBy('id', 'ASC')->where('id', '!=', $descbookreviews->id)->limit(3)->get();
         return view('member.home.index', compact([
             'banners',
             'books',
             'descbooks',
             'bookreviews',
             'descbookreviews',
+        ]));
+    }
+
+    public function show($id){
+        $books = Book::with('category')->where('id', $id)->first();
+        return view('member.books.show', compact([
+            'books'
         ]));
     }
 

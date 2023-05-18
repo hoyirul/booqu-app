@@ -22,9 +22,18 @@
           <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-700 md:p-0">Review Buku</a>
         </li>
         <li>
-          <a
-            class="py-2 px-8 bg-green-600 rounded-lg text-white montserrat-semibold hover:bg-green-700 transition-colors"
-            href="/login">Login</a>
+          @auth
+            <form action="/logout" method="POST">
+              @csrf
+              <button type="submit" class="py-2 px-8 -mt-2 bg-rose-600 rounded-lg text-white montserrat-semibold hover:bg-rose-700 transition-colors">
+                Logout
+              </button>
+            </form>
+          @else
+            <a
+              class="py-2 px-8 bg-green-600 rounded-lg text-white montserrat-semibold hover:bg-green-700 transition-colors"
+              href="/login">Login</a>
+          @endauth
         </li>
       </ul>
     </div>

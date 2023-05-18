@@ -20,7 +20,7 @@ class RoleAdminMiddleware
         if(Auth::user()->role_id == 1){
             return $next($request);
         }else{
-            return redirect('/v1');
+            return redirect('/v1/home');
         }
     }
 }

@@ -37,7 +37,7 @@ class LoginController extends Controller
                 return '/v1/home';
                 break;
             default:
-                return '/m1/home';
+                return '/m1/landing';
                 break;
         }
     }

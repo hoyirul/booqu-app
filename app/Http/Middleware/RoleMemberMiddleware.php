@@ -20,7 +20,7 @@ class RoleMemberMiddleware
         if(Auth::user()->role_id == 2){
             return $next($request);
         }else{
-            return redirect('/m1');
+            return redirect('/m1/landing');
         }
     }
 }

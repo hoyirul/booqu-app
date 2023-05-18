@@ -12,8 +12,8 @@ use App\Http\Controllers\Admin\MembershipController as AdminMembershipController
 use App\Http\Controllers\Admin\SettingController as AdminSettingController;
 // Member Controller
 use App\Http\Controllers\Member\HomeController as MemberHomeController;
-use App\Models\UserSession;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -62,7 +62,8 @@ Route::middleware('auth')->group(function () {
     Route::middleware('is.member')->group(function () {
       Route::middleware('max.device')->group(function () {
         Route::prefix('m1')->group(function () {
-          Route::get('/home', [App\Http\Controllers\HomeController::class, 'member']);
+          Route::get('/landing', [MemberHomeController::class, 'index']);
+          Route::get('/books/{id}/show', [MemberHomeController::class, 'show']);
         });
       });
     });
