@@ -62,7 +62,7 @@ class BookController extends Controller
             'title' => $request->title,
             'author' => $request->author,
             'publisher' => $request->publisher,
-            'embeded_link' => $request->embeded_link.'?preview',
+            'embeded_link' => $request->embeded_link.'preview',
             'book_cover' => $book_cover
         ]);
 
@@ -129,7 +129,7 @@ class BookController extends Controller
             'title' => $request->title,
             'author' => $request->author,
             'publisher' => $request->publisher,
-            'embeded_link' => $request->embeded_link,
+            'embeded_link' => $request->embeded_link.'preview',
             'book_cover' => ($book_cover == null) ? $books->book_cover : $book_cover
         ]);
 

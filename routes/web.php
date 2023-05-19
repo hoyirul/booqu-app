@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\RoleController as AdminRoleController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\MasterMemberController as AdminMasterMemberController;
 use App\Http\Controllers\Admin\MembershipController as AdminMembershipController;
+use App\Http\Controllers\Admin\MostViewedBookController as AdminMostViewedBookController;
 use App\Http\Controllers\Admin\SettingController as AdminSettingController;
 // Member Controller
 use App\Http\Controllers\Member\HomeController as MemberHomeController;
@@ -52,6 +53,7 @@ Route::middleware('auth')->group(function () {
           Route::resource('mastermembers', AdminMasterMemberController::class);
           Route::resource('books', AdminBookController::class);
           Route::resource('bookreviews', AdminBookReviewController::class);
+          Route::get('mostviewedbooks', [AdminMostViewedBookController::class, 'index']);
 
           // setting and accounts
           Route::get('accounts', [AdminSettingController::class, 'account']);

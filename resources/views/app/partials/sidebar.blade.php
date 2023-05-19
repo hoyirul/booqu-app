@@ -77,7 +77,7 @@
       </a>
     </li>
     <!-- User interface -->
-    <li class="menu-item {{ ($title == 'Master Books' || $title == 'Purchase Orders') ? 'active open' : '' }}">
+    <li class="menu-item {{ ($title == 'Master Books' || $title == 'Most Viewed Books') ? 'active open' : '' }}">
       <a href="javascript:void(0)" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-box"></i>
         <div data-i18n="Master Books">Book Master</div>
@@ -93,15 +93,15 @@
             <div data-i18n="Purchases Orders ">Book Ratings </div>
           </a>
         </li>
-        <li class="menu-item {{ ($title == 'Purchase Orders') ? 'active' : '' }}">
-          <a href="/purchase_orders" class="menu-link">
-            <div data-i18n="Purchases Orders ">Most Viewed </div>
+        <li class="menu-item {{ ($title == 'Most Viewed Books') ? 'active' : '' }}">
+          <a href="/v1/mostviewedbooks" class="menu-link">
+            <div data-i18n="Most Viewed Books ">Most Viewed </div>
           </a>
         </li>
       </ul>
     </li>
     <!-- Extended components -->
-    <li class="menu-item {{ ($title == 'Book Reviews' || $title == 'Sale Orders') ? 'active open' : '' }}">
+    <li class="menu-item {{ ($title == 'Book Reviews') ? 'active open' : '' }}">
       <a href="javascript:void(0)" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-copy"></i>
         <div data-i18n="Reviews Master">Review Master</div>
@@ -110,16 +110,6 @@
         <li class="menu-item {{ ($title == 'Book Reviews') ? 'active' : '' }}">
           <a href="/v1/bookreviews" class="menu-link">
             <div data-i18n="Reviews">Book Reviews</div>
-          </a>
-        </li>
-        <li class="menu-item {{ ($title == 'Sale Orders') ? 'active' : '' }}">
-          <a href="/sale_orders" class="menu-link">
-            <div data-i18n="Sales Orders">Review Ratings</div>
-          </a>
-        </li>
-        <li class="menu-item {{ ($title == 'Sale Orders') ? 'active' : '' }}">
-          <a href="/sale_orders" class="menu-link">
-            <div data-i18n="Sales Orders">Most Viewed</div>
           </a>
         </li>
       </ul>
