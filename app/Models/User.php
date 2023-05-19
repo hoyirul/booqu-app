@@ -61,11 +61,6 @@ class User extends Authenticatable
         return $this->hasMany(UserSession::class, 'user_id', 'id');
     }
 
-    public function most_viewed_review(){
-        return $this->hasMany(MostViewedReview::class, 'user_id', 'id');
-    }
-
-
     public function book_rating(){
         return $this->hasMany(BookRating::class, 'user_id', 'id');
     }

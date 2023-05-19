@@ -7,7 +7,9 @@ use App\Models\Banner;
 use App\Models\Book;
 use App\Models\BookRating;
 use App\Models\BookReview;
+use App\Models\MostViewedBook;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -16,7 +18,11 @@ class HomeController extends Controller
         $books = Book::limit(4)->get();
         $descbooks = Book::orderBy('id', 'DESC')->limit(4)->get();
         $descbookreviews = BookReview::orderBy('id', 'DESC')->first();
-        $bookreviews = BookReview::orderBy('id', 'ASC')->where('id', '!=', $descbookreviews->id)->limit(3)->get();
+        if($descbookreviews != null){
+            $bookreviews = BookReview::orderBy('id', 'ASC')->where('id', '!=', $descbookreviews->id)->limit(3)->get();
+        }else{
+            $bookreviews = BookReview::orderBy('id', 'ASC')->limit(3)->get();
+        }
         return view('member.home.index', compact([
             'banners',
             'books',
@@ -55,6 +61,10 @@ class HomeController extends Controller
 
     public function show($id){
         $books = Book::with('category')->where('id', $id)->first();
+        MostViewedBook::create([
+            'book_id' => $books->id,
+            'user_id' => Auth::user()->id
+        ]);
         return view('member.books.show', compact([
             'books'
         ]));

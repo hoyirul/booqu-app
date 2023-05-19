@@ -12,8 +12,4 @@ class BookReview extends Model
     protected $fillable = [
         'title', 'author', 'embeded_link'
     ];
-
-    public function most_viewed_review(){
-        return $this->hasMany(MostViewedReview::class, 'book_review_id', 'id');
-    }
 }

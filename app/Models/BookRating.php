@@ -10,7 +10,7 @@ class BookRating extends Model
     use HasFactory;
 
     protected $fillable = [
-        'book_id', 'user_id', 'star'
+        'book_id', 'user_id', 'testimonial', 'star'
     ];
 
     public function book(){
