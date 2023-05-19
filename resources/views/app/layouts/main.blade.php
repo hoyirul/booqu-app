@@ -4,7 +4,6 @@
   class="light-style layout-menu-fixed"
   dir="ltr"
   data-theme="theme-default"
-  data-assets-path="../assets/"
   data-template="vertical-menu-template-free"
   >
   <head>
@@ -13,10 +12,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
       />
-    <title>Dashboard - Booqu 2023 | Admin Panel</title>
+    <title>Dashboard - Booqu 2023 | Termukan berbagai E-Book, Modul dan Jurnal Hanya di Booqu.id</title>
     <meta name="description" content="" />
     <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon/favicon.ico') }}" />
+    <link rel="icon" type="image/png" href="{{ asset('member/img/logo/ico.png') }}">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

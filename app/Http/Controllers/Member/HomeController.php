@@ -26,6 +26,33 @@ class HomeController extends Controller
         ]));
     }
 
+    public function book_review(Request $request){
+        $key = $request->key;
+        $bookreviews = [];
+        if($key != null){
+            $bookreviews = BookReview::where('title', 'like', "%{$key}%")->paginate(12);
+        }else{
+            $bookreviews = BookReview::paginate(12);
+        }
+        return view('member.reviews.index', compact([
+            'bookreviews', 'key'
+        ]));
+    }
+
+    public function book(Request $request){
+        $key = $request->key;
+        $books = [];
+        if($key != null){
+            $books = Book::with('category')
+                ->where('title', 'like', "%{$key}%")->paginate(12);
+        }else{
+            $books = Book::with('category')->paginate(12);
+        }
+        return view('member.books.index', compact([
+            'books', 'key'
+        ]));
+    }
+
     public function show($id){
         $books = Book::with('category')->where('id', $id)->first();
         return view('member.books.show', compact([

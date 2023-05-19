@@ -1,23 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.main')
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Booqu | Sandbox</title>
-  <link rel="stylesheet" href="./css/main.css">
-</head>
-
-<body>
+@section('content')
   <!-- component -->
   <div class="h-screen flex">
     <div class="flex w-1/2 bg-gradient-to-tr from-green-600 to-cyan-500 i justify-around items-center">
       <div>
         <img src="{{ asset('member/img/logo/light-logo.png') }}" alt="" class="w-80">
         <p class="text-white mt-1 mb-4">Temukan berbagai E-Book modul dan jurnal.</p>
-        <a href="/" class="bg-white text-green-600 mt-4 py-2 px-4 rounded-xl font-bold mb-2">Read
-          More</a>
+        <a href="/" class="bg-white text-green-600 mt-4 py-2 px-4 rounded-lg font-bold border border-white mb-2 me-2 hover:bg-transparent hover:text-white">
+          Read More
+        </a>
+        <a href="#" class="bg-transparent text-white border border-white mt-4 py-2 px-4 rounded-lg font-bold mb-2 hover:bg-white hover:text-green-600">
+          Join Now
+        </a>
       </div>
     </div>
     <div class="flex items-center justify-center md:flex md:items-center md:justify-center sm:w-auto md:h-full w-2/5 xl:w-1/2 p-8  md:p-10 lg:p-14 sm:rounded-lg md:rounded-none bg-white">
@@ -94,8 +89,4 @@
       </div>
     </div>
   </div>
-
-  <script src="https://cdn.tailwindcss.com"></script>
-</body>
-
-</html>
+@endsection

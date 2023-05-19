@@ -1,6 +1,6 @@
 <nav class="shadow-md bg-white">
   <div class="container flex flex-wrap items-center justify-between mx-auto p-4 px-12">
-    <a href="https://flowbite.com/" class="flex items-center">
+    <a href="/" class="flex items-center">
         <img src="{{ asset('member/img/logo/dark-logo.png') }}" class="w-48" alt="Flowbite Logo" />
     </a>
     <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-default" aria-expanded="false">
@@ -16,19 +16,33 @@
           <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-700 md:p-0">Membership</a>
         </li>
         <li>
-          <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-700 md:p-0">Koleksi</a>
-        </li>
-        <li>
-          <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-700 md:p-0">Review Buku</a>
+          @auth
+            <a href="/m1/books" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-700 md:p-0">Koleksi</a>
+          @else
+            <a href="/books" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-700 md:p-0">Koleksi</a>
+          @endauth
         </li>
         <li>
           @auth
-            <form action="/logout" method="POST">
-              @csrf
-              <button type="submit" class="py-2 px-8 -mt-2 bg-rose-600 rounded-lg text-white montserrat-semibold hover:bg-rose-700 transition-colors">
-                Logout
-              </button>
-            </form>
+            <a href="/m1/books/reviews" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-700 md:p-0">Review Buku</a>
+          @else
+            <a href="/books/reviews" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-700 md:p-0">Review Buku</a>
+          @endauth
+        </li>
+        <li>
+          @auth
+            @if (Auth::user()->role_id == 1)
+              <a href="/v1/home" class="py-2 px-8 -mt-2 bg-cyan-500 rounded-lg text-white montserrat-semibold hover:bg-cyan-500 transition-colors">
+                Dashboard
+              </a>
+            @else
+              <form action="/logout" onsubmit="return confirm('Are you sure?')" method="POST">
+                @csrf
+                <button type="submit" class="py-2 px-8 -mt-2 bg-rose-600 rounded-lg text-white montserrat-semibold hover:bg-rose-700 transition-colors">
+                  Logout
+                </button>
+              </form>
+            @endif
           @else
             <a
               class="py-2 px-8 bg-green-600 rounded-lg text-white montserrat-semibold hover:bg-green-700 transition-colors"

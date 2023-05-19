@@ -33,6 +33,8 @@ Route::get('/test', function () {
 });
 
 Route::get('/', [MemberHomeController::class, 'index']);
+Route::get('/books', [MemberHomeController::class, 'book']);
+Route::get('/books/reviews', [MemberHomeController::class, 'book_review']);
 
 Auth::routes(['register' => false]);
 
@@ -64,6 +66,8 @@ Route::middleware('auth')->group(function () {
         Route::prefix('m1')->group(function () {
           Route::get('/landing', [MemberHomeController::class, 'index']);
           Route::get('/books/{id}/show', [MemberHomeController::class, 'show']);
+          Route::get('/books', [MemberHomeController::class, 'book']);
+          Route::get('/books/reviews', [MemberHomeController::class, 'book_review']);
         });
       });
     });
