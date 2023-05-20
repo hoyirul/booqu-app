@@ -34,6 +34,7 @@ Route::get('/test', function () {
 });
 
 Route::get('/', [MemberHomeController::class, 'index']);
+Route::get('/about', [MemberHomeController::class, 'about']);
 Route::get('/books', [MemberHomeController::class, 'book']);
 Route::get('/books/reviews', [MemberHomeController::class, 'book_review']);
 

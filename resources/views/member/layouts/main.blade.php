@@ -21,6 +21,7 @@
 
       @yield('content')
 
+      @include('member.partials.colabs')
       @include('member.partials.footer')
     </div>
   </main>

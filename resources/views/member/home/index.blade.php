@@ -2,11 +2,11 @@
 
 @section('content')
   {{-- START BANNER/SLIDER | SECTION --}}
-  <div class="bg-white shadow-lg rounded-lg mx-4 my-4">
+  <div class="overflow-hidden bg-white shadow-lg rounded-lg mx-4 my-4">
     <div id="default-carousel" class="relative" data-carousel="static">
       <!-- Carousel wrapper -->
       {{-- sm:h-64 xl:h-96 2xl:h-96 --}}
-      <div class="overflow-hidden relative h-56 sm:h-64 md:h-[24rem] lg:h-[28rem] xl:h-[36rem] 2xl:h-[44rem]">
+      <div class="overflow-hidden relative h-32 sm:h-64 md:h-[24rem] lg:h-[28rem] xl:h-[36rem] 2xl:h-[44rem]">
         @foreach ($banners as $item)
           <div class="hidden duration-300 ease-in-out" data-carousel-item>
             <span
@@ -56,14 +56,14 @@
   {{-- START LIST BOOKS | SECTION 1 --}}
   <div class="mt-8 px-4 flex justify-between">
     <h1 class="text-gray-600 montserrat-semibold text-2xl">Buku Terbaru</h1>
-    <a href="/m1/books" class="w-48 py-2 bg-green-600 rounded-lg text-white montserrat-medium text-sm cursor-pointer">Lihat Semua
+    <a href="/m1/books" class="w-48 py-6 sm:py-2 md:py-2 bg-green-600 rounded-lg text-white montserrat-medium text-sm cursor-pointer">Lihat Semua
     </a>
   </div>
 
   @if ($books->count() > 0)
     <div class="grid grid-cols-8 gap-4 mt-2">
       @foreach ($books as $item)
-        <div class="col-span-6 sm:col-span-4 md:col-span-4 lg:col-span-2 xl:col-span-2">
+        <div class="col-span-8 sm:col-span-4 md:col-span-4 lg:col-span-2 xl:col-span-2">
           <a href="/m1/books/{{ $item->id }}/show">
             <div class="bg-white shadow-lg rounded-lg px-4 py-6 mx-4 my-4">
               <div class="overflow-hidden mx-auto h-64 bg-gray-200 rounded-md">
@@ -95,14 +95,14 @@
   {{-- START LIST BOOKS | SECTION 2 --}}
   <div class="mt-8 px-4 flex justify-between">
     <h1 class="text-gray-600 montserrat-semibold text-2xl">Buku Bisnis</h1>
-    <a href="/m1/books" class="w-48 py-2 bg-green-600 rounded-lg text-white montserrat-medium text-sm cursor-pointer">Lihat Semua
+    <a href="/m1/books" class="w-48 py-6 sm:py-2 md:py-2 bg-green-600 rounded-lg text-white montserrat-medium text-sm cursor-pointer">Lihat Semua
     </a>
   </div>
 
   @if ($descbooks->count() > 0)
     <div class="grid grid-cols-8 gap-4 mt-2">
       @foreach ($descbooks as $item)
-        <div class="col-span-6 sm:col-span-4 md:col-span-4 lg:col-span-2 xl:col-span-2">
+        <div class="col-span-8 sm:col-span-4 md:col-span-4 lg:col-span-2 xl:col-span-2">
           <a href="/m1/books/{{ $item->id }}/show">
             <div class="bg-white shadow-lg rounded-lg px-4 py-6 mx-4 my-4">
               <div class="overflow-hidden mx-auto h-64 bg-gray-200 rounded-md">
@@ -146,14 +146,14 @@
   {{-- START LIST BOOK REVIEWS | SECTION --}}
   <div class="mt-8 px-4 flex justify-between">
     <h1 class="text-gray-600 montserrat-semibold text-2xl">Review Buku</h1>
-    <a href="/m1/books/reviews" class="w-48 py-2 bg-green-600 rounded-lg text-white montserrat-medium text-sm cursor-pointer">Lihat Semua
+    <a href="/m1/books/reviews" class="w-48 py-6 sm:py-2 md:py-2 bg-green-600 rounded-lg text-white montserrat-medium text-sm cursor-pointer">Lihat Semua
     </a>
   </div>
 
   @if ($bookreviews->count() > 0)
     <div class="px-4 py-6">
       <div class="overflow-hidden bg-white h-[36rem] shadow-lg rounded-lg">
-        <iframe src="{{ $descbookreviews->embeded_link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" class="top-0 left-0 w-full h-full" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/{{ $descbookreviews->embeded_link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" class="top-0 left-0 w-full h-full" allowfullscreen></iframe>
       </div>
     </div>
 
@@ -162,7 +162,7 @@
         <div class="col-span-6 sm:col-span-6 md:col-span-3 lg:col-span-2 xl:col-span-2">
           <div class="px-4 py-6">
             <div class="overflow-hidden bg-white shadow-lg rounded-lg h-[16rem]">
-              <iframe src="{{ $item->embeded_link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" class="top-0 left-0 w-full h-full" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/{{ $item->embeded_link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" class="top-0 left-0 w-full h-full" allowfullscreen></iframe>
             </div>
           </div>
         </div>
@@ -175,33 +175,4 @@
     <p class="text-center mt-6">There is no book list!</p>
   @endif
   {{-- END LIST BOOK REVIEWS | SECTION --}}
-
-  {{-- START LIST MEMBERSHIP/ADS | SECTION --}}
-  <div class="text-center max-w-lg mx-auto mt-8">
-    <h1 class="text-gray-600 montserrat-semibold text-2xl">Kemitraan dan Kolaborasi</h1>
-    <p class="text-gray-400 montserrat-regular font-sm mt-2">Berikut adalah kemitraan dan kolaborasi dari Booqu.ID</p>
-  </div>
-  {{-- END LIST MEMBERSHIP/ADS | SECTION --}}
-
-  {{-- START FOOTER | SECTION --}}
-  <div class="max-w-lg mx-auto mt-2">
-    <div class="grid grid-cols-6">
-      <div class="col-span-6 sm:col-span-6 md:col-span-2 lg:col-span-2 xl:col-span-2">
-        <div class="bg-transparent rounded-lg px-4 py-6 mx-4 my-4">
-          <img src="{{ asset('member/img/logo/um-logo.png') }}" class="w-full h-auto" alt="">
-        </div>
-      </div>
-      <div class="col-span-6 sm:col-span-6 md:col-span-2 lg:col-span-2 xl:col-span-2">
-        <div class="bg-transparent rounded-lg px-4 py-6 mx-4 my-4">
-          <img src="{{ asset('member/img/logo/learning-um.png') }}" class="w-full h-auto" alt="">
-        </div>
-      </div>
-      <div class="col-span-6 sm:col-span-6 md:col-span-2 lg:col-span-2 xl:col-span-2">
-        <div class="bg-transparent rounded-lg px-4 py-6 mx-4 my-4">
-          <img src="{{ asset('member/img/logo/melijo-logo.png') }}" class="w-full h-auto" alt="">
-        </div>
-      </div>
-    </div>
-  </div>
-  {{-- START FOOTER | SECTION --}}
 @endsection

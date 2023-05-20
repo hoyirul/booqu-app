@@ -22,7 +22,7 @@
           <div class="col-span-6 sm:col-span-6 md:col-span-3 lg:col-span-2 xl:col-span-2">
             <div class="px-4 py-6">
               <div class="overflow-hidden bg-white shadow-lg rounded-lg h-[16rem]">
-                <iframe src="{{ $item->embeded_link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" class="top-0 left-0 w-full h-full" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/{{ $item->embeded_link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" class="top-0 left-0 w-full h-full" allowfullscreen></iframe>
               </div>
             </div>
           </div>

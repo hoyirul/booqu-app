@@ -70,6 +70,10 @@ class HomeController extends Controller
         ]));
     }
 
+    public function about(){
+        return view('member.abouts.index');
+    }
+
     public static function rating($id){
         $avg = BookRating::where('book_id', $id)->avg('star');
         return ($avg == null) ? 0 : $avg;
