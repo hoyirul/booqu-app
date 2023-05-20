@@ -12,9 +12,9 @@ use App\Http\Controllers\Admin\MembershipController as AdminMembershipController
 use App\Http\Controllers\Admin\MostViewedBookController as AdminMostViewedBookController;
 use App\Http\Controllers\Admin\SettingController as AdminSettingController;
 // Member Controller
+use App\Http\Controllers\Member\BookCollectionController as MemberBookCollectionController;
 use App\Http\Controllers\Member\HomeController as MemberHomeController;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -70,7 +70,10 @@ Route::middleware('auth')->group(function () {
           Route::get('/landing', [MemberHomeController::class, 'index']);
           Route::get('/books/{id}/show', [MemberHomeController::class, 'show']);
           Route::get('/books', [MemberHomeController::class, 'book']);
+          Route::get('/collections', [MemberHomeController::class, 'collection']);
           Route::get('/books/reviews', [MemberHomeController::class, 'book_review']);
+          Route::get('/collections/{book_id}', [MemberBookCollectionController::class, 'store']);
+          Route::get('/{book_id}/collections/{user_id}', [MemberBookCollectionController::class, 'destroy']);
         });
       });
     });

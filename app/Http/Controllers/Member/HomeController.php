@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Member;
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
 use App\Models\Book;
+use App\Models\BookCollection;
 use App\Models\BookRating;
 use App\Models\BookReview;
 use App\Models\MostViewedBook;
@@ -61,17 +62,30 @@ class HomeController extends Controller
 
     public function show($id){
         $books = Book::with('category')->where('id', $id)->first();
+        $collections = BookCollection::with('user')->with('book')
+            ->where('user_id', Auth::user()->id)
+            ->where('book_id', $id)
+            ->orderBy('id', 'DESC')->first();
         MostViewedBook::create([
             'book_id' => $books->id,
             'user_id' => Auth::user()->id
         ]);
         return view('member.books.show', compact([
-            'books'
+            'books', 'collections'
         ]));
     }
 
     public function about(){
         return view('member.abouts.index');
+    }
+
+    public function collection(){
+        $collections = BookCollection::with('user')->with('book')
+            ->where('user_id', Auth::user()->id)
+            ->orderBy('id', 'DESC')->get();
+        return view('member.collections.index', compact([
+            'collections'
+        ]));
     }
 
     public static function rating($id){
