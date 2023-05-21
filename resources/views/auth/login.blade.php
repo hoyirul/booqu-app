@@ -48,7 +48,7 @@
             <label class="ml-3 text-sm font-bold text-gray-700 tracking-wide">Email</label>
             <input
               class="w-full content-center text-base px-4 py-2 border-b rounded-2xl border-gray-300 focus:outline-none focus:border-indigo-500 @error('email') border border-red-500 rounded outline-none @enderror"
-              type="email" placeholder="mail@gmail.com" name="email">
+              type="email" placeholder="mail@gmail.com" name="email" value="{{ old('email') }}">
             @error('email')
               <span class="inline-flex text-sm text-red-600">{{ $message }}</span>
             @enderror

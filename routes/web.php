@@ -73,6 +73,7 @@ Route::middleware('auth')->group(function () {
           Route::get('/collections', [MemberHomeController::class, 'collection']);
           Route::get('/books/reviews', [MemberHomeController::class, 'book_review']);
           Route::get('/collections/{book_id}', [MemberBookCollectionController::class, 'store']);
+          Route::post('/books/{book_id}/ratings', [MemberHomeController::class, 'book_rating']);
           Route::get('/{book_id}/collections/{user_id}', [MemberBookCollectionController::class, 'destroy']);
         });
       });

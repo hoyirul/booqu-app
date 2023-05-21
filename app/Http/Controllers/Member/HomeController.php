@@ -63,16 +63,30 @@ class HomeController extends Controller
     public function show($id){
         $books = Book::with('category')->where('id', $id)->first();
         $collections = BookCollection::with('user')->with('book')
-            ->where('user_id', Auth::user()->id)
-            ->where('book_id', $id)
-            ->orderBy('id', 'DESC')->first();
-        MostViewedBook::create([
-            'book_id' => $books->id,
-            'user_id' => Auth::user()->id
-        ]);
+                    ->where('user_id', Auth::user()->id)
+                    ->where('book_id', $id)
+                    ->orderBy('id', 'DESC')->first();
+        $ratings = BookRating::where('user_id', Auth::user()->id)
+                    ->where('book_id', $id)
+                    ->first();
+        // MostViewedBook::create([
+        //     'book_id' => $books->id,
+        //     'user_id' => Auth::user()->id
+        // ]);
         return view('member.books.show', compact([
-            'books', 'collections'
+            'books', 'collections', 'ratings'
         ]));
+    }
+
+    public function book_rating(Request $request, $book_id){
+        BookRating::create([
+            'book_id' => $book_id,
+            'user_id' => Auth::user()->id,
+            'testimonial' => '',
+            'star' => $request->rate,
+        ]);
+
+        return redirect('/m1/books/'.$book_id.'/show')->with('success', "Data added successfully!");
     }
 
     public function about(){

@@ -25,10 +25,20 @@
       @include('member.partials.footer')
     </div>
   </main>
-
+  <script src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
+  <script>
+    function closeModal(id) {
+      document.getElementById(id).dispatchEvent(new CustomEvent('close-me', { detail: {}}));
+    }
+    function openModal(id) {
+      document.getElementById(id).dispatchEvent(new CustomEvent('open-me', { detail: {}}));
+    }
+
+    openModal('basicModal');
+  </script>
 </body>
 
 </html>

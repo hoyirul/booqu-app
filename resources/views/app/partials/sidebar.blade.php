@@ -128,14 +128,13 @@
       </a>
     </li>
     <li class="menu-item">
-      <a
-        href="#documentation"
-        target="_blank"
-        class="menu-link"
-        >
-        <i class="menu-icon tf-icons bx bx-file"></i>
-        <div data-i18n="Documentation">Documentation</div>
-      </a>
+      <form action="/logout" method="POST">
+        @csrf
+        <button type="submit" class="menu-link bg-white border-0">
+          <i class="menu-icon tf-icons bx bx-power-off"></i>
+          <div data-i18n="Documentation">Log Out</div>
+        </button>
+      </form>
     </li>
   </ul>
 </aside>
