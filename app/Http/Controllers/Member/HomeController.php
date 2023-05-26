@@ -8,7 +8,6 @@ use App\Models\Book;
 use App\Models\BookCollection;
 use App\Models\BookRating;
 use App\Models\BookReview;
-use App\Models\MostViewedBook;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 

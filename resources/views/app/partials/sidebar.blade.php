@@ -88,11 +88,11 @@
             <div data-i18n="Master Books">Books</div>
           </a>
         </li>
-        <li class="menu-item {{ ($title == 'Purchase Orders') ? 'active' : '' }}">
+        {{-- <li class="menu-item {{ ($title == 'Purchase Orders') ? 'active' : '' }}">
           <a href="/purchase_orders" class="menu-link">
             <div data-i18n="Purchases Orders ">Book Ratings </div>
           </a>
-        </li>
+        </li> --}}
         <li class="menu-item {{ ($title == 'Most Viewed Books') ? 'active' : '' }}">
           <a href="/v1/mostviewedbooks" class="menu-link">
             <div data-i18n="Most Viewed Books ">Most Viewed </div>

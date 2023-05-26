@@ -3,7 +3,7 @@
 @section('content')
   <!-- component -->
   <div class="absolute flex justify-between mt-6">
-    <a href="/m1/books" class="bg-green-600 absolute montserrat-medium py-2 px-10 rounded-md text-white text-md">
+    <a href="/m1/books" class="invisible md:visible bg-green-600 absolute montserrat-medium py-2 px-10 rounded-md text-white text-md">
       Kembali
     </a>
   </div>

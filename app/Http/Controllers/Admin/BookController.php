@@ -19,7 +19,7 @@ class BookController extends Controller
     public function index()
     {
         $title = 'Master Books';
-        $data = Book::with('category')->get();
+        $data = Book::with('category')->withCount('book_rating')->get();
         return view('app.books.index', compact('data', 'title'));
     }
 

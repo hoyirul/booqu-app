@@ -8,12 +8,12 @@
   <div class="grid grid-cols-6">
     <div class="col-span-2 sm:col-span-2 md:col-span-2 lg:col-span-2 xl:col-span-2">
       <div class="bg-transparent rounded-lg px-4 py-6 mx-4 my-4">
-        <img src="{{ asset('member/img/logo/um-logo.png') }}" class="w-24 h-auto" alt="">
+        <img src="{{ asset('member/img/logo/logo-mlab.png') }}" class="w-24 h-auto" alt="">
       </div>
     </div>
     <div class="col-span-2 sm:col-span-2 md:col-span-2 lg:col-span-2 xl:col-span-2">
       <div class="bg-transparent rounded-lg px-4 py-6 mx-4 my-4">
-        <img src="{{ asset('member/img/logo/learning-um.png') }}" class="w-24 h-auto" alt="">
+        <img src="{{ asset('member/img/logo/heidigi-logo.png') }}" class="w-24 h-auto" alt="">
       </div>
     </div>
     <div class="col-span-2 sm:col-span-2 md:col-span-2 lg:col-span-2 xl:col-span-2">

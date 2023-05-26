@@ -39,7 +39,7 @@
               <td class="text-center">{{ $loop->iteration }}</td>
               <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ $item->title }}</strong></td>
               <td>{{ $item->author }}</td>
-              <td><a href="{{ $item->embeded_link }}" class="badge bg-label-primary" target="_blank">Embed</a></td>
+              <td><a href="https://www.youtube.com/embed/{{ $item->embeded_link }}" class="badge bg-label-primary" target="_blank">Embed</a></td>
               <td>{{ $item->updated_at }}</td>
               <td>
                 <form action="/v1/bookreviews/{{ $item->id }}" onsubmit="return confirm('Are you sure?')" method="post">

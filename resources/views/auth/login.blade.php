@@ -10,7 +10,7 @@
         <a href="/" class="bg-white text-green-600 mt-4 py-2 px-4 rounded-lg font-bold border border-white mb-2 me-2 hover:bg-transparent hover:text-white">
           Read More
         </a>
-        <a href="/joins" class="bg-transparent text-white border border-white mt-4 py-2 px-4 rounded-lg font-bold mb-2 hover:bg-white hover:text-green-600">
+        <a href="https://forms.gle/3Hk97f5gy9idBoAi6" class="bg-transparent text-white border border-white mt-4 py-2 px-4 rounded-lg font-bold mb-2 hover:bg-white hover:text-green-600">
           Join Now
         </a>
       </div>

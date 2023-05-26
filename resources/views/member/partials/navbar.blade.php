@@ -13,7 +13,7 @@
           <a href="/about" class="block py-2 pl-3 pr-4 text-white bg-gray-700 rounded md:bg-transparent md:text-gray-700 md:p-0">Tentang Kami</a>
         </li>
         <li>
-          <a href="/joins" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-700 md:p-0">Membership</a>
+          <a href="https://forms.gle/3Hk97f5gy9idBoAi6" target="_blank" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-700 md:p-0">Membership</a>
         </li>
         <li>
           @auth

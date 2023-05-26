@@ -37,18 +37,6 @@ class SettingController extends Controller
             'password' => Hash::make($request->password)
         ]);
 
-        return redirect('/settings')->with('success', 'Password successfully changed at '.Carbon::now());
-    }
-
-    public function update_printer(Request $request){
-        $request->validate([
-            'printer' => 'required',
-        ]);
-
-        User::where('id', auth()->user()->id)->update([
-            'printer' => $request->printer
-        ]);
-
-        return redirect('/settings')->with('success', 'Printer successfully changed at '.Carbon::now());
+        return redirect('/v1/settings')->with('success', 'Password successfully changed at '.Carbon::now());
     }
 }

@@ -32,6 +32,7 @@
             <th>Category</th>
             <th>Embed</th>
             <th>File</th>
+            <th>Rating</th>
             <th>Updated At</th>
             <th>Actions</th>
           </tr>
@@ -46,6 +47,10 @@
               <td>{{ $item->category->category }}</td>
               <td><a href="{{ $item->embeded_link }}" class="badge bg-label-primary" target="_blank">Embed</a></td>
               <td><a href="/storage/{{ $item->book_cover }}" class="badge bg-label-secondary" target="_blank">file</a></td>
+              <td>
+                <span class="bx bx-star text-warning"></span>
+                <span class="ml-2 text-sm font-bold text-gray-900 dark:text-gray-500">{{ \App\Http\Controllers\Member\HomeController::rating($item->id) }}</span>
+              </td>
               <td>{{ $item->updated_at }}</td>
               <td>
                 <form action="/v1/books/{{ $item->id }}" onsubmit="return confirm('Are you sure?')" method="post">
