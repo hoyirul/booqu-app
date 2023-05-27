@@ -3,7 +3,7 @@
 @section('content')
   <!-- component -->
   <div class="h-screen flex">
-    <div class="flex w-1/2 bg-gradient-to-tr from-green-600 to-cyan-500 i justify-around items-center">
+    <div class="invisible lg:visible flex w-0 md:w-0 lg:w-full bg-gradient-to-tr from-green-600 to-cyan-500 i justify-around items-center">
       <div>
         <img src="{{ asset('member/img/logo/light-logo.png') }}" alt="" class="w-80">
         <p class="text-white mt-1 mb-4">Temukan berbagai E-Book modul dan jurnal.</p>
@@ -15,7 +15,7 @@
         </a>
       </div>
     </div>
-    <div class="flex items-center justify-center md:flex md:items-center md:justify-center sm:w-auto md:h-full w-2/5 xl:w-1/2 p-8  md:p-10 lg:p-14 sm:rounded-lg md:rounded-none bg-white">
+    <div class="flex items-center justify-center w-full lg:1/2 p-8">
       <div class="max-w-md w-full space-y-8">
         <div class="text-center">
           <h2 class="mt-6 text-3xl font-bold text-gray-900">
@@ -86,6 +86,14 @@
             </button>
           </div>
         </form>
+        <div class="visible lg:invisible flex">
+          <a href="/" class="flex w-1/2 bg-green-600 text-white mt-4 py-2 px-4 rounded-lg font-bold border border-white mb-2 me-2 hover:bg-transparent hover:border-green-600 hover:text-green-600">
+            Read More
+          </a>
+          <a href="https://forms.gle/3Hk97f5gy9idBoAi6" class="flex w-1/2 bg-transparent text-green-600 border border-green-600 mt-4 py-2 px-4 rounded-lg font-bold mb-2 me-2 hover:bg-green-600 hover:text-white">
+            Join Now
+          </a>
+        </div>
       </div>
     </div>
   </div>

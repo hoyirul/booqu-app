@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\SettingController as AdminSettingController;
 // Member Controller
 use App\Http\Controllers\Member\BookCollectionController as MemberBookCollectionController;
 use App\Http\Controllers\Member\HomeController as MemberHomeController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +28,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/storage', function () {
+    Artisan::call('storage:link');
+});
 
 Route::get('/test', function () {
   // $device = UserSession::where('user_id', 2)->count('user_id');
