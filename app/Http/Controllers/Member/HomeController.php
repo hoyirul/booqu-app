@@ -8,8 +8,11 @@ use App\Models\Book;
 use App\Models\BookCollection;
 use App\Models\BookRating;
 use App\Models\BookReview;
+use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -99,6 +102,23 @@ class HomeController extends Controller
         return view('member.collections.index', compact([
             'collections'
         ]));
+    }
+
+    public function setting(){
+        return view('member.settings.index');
+    }
+
+    public function update_password(Request $request){
+        $request->validate([
+            'password' => 'required|min:6',
+            'password_confirmation' => 'same:password|min:6'
+        ]);
+
+        User::where('id', auth()->user()->id)->update([
+            'password' => Hash::make($request->password)
+        ]);
+
+        return redirect('/m1/settings')->with('success', 'Password successfully changed at '.Carbon::now());
     }
 
     public static function rating($id){

@@ -67,6 +67,8 @@ Route::middleware('auth')->group(function () {
     Route::middleware('is.member')->group(function () {
       Route::middleware('max.device')->group(function () {
         Route::prefix('m1')->group(function () {
+          Route::get('/settings', [MemberHomeController::class, 'setting']);
+          Route::put('/settings', [MemberHomeController::class, 'update_password']);
           Route::get('/landing', [MemberHomeController::class, 'index']);
           Route::get('/books/{id}/show', [MemberHomeController::class, 'show']);
           Route::get('/books', [MemberHomeController::class, 'book']);

@@ -36,12 +36,9 @@
                 Dashboard
               </a>
             @else
-              <form action="/logout" onsubmit="return confirm('Are you sure?')" method="POST">
-                @csrf
-                <button type="submit" class="py-2 px-8 -mt-2 bg-rose-600 rounded-lg text-white montserrat-semibold hover:bg-rose-700 transition-colors">
-                  Logout
-                </button>
-              </form>
+              <a href="/m1/settings" class="py-2 px-8 -mt-2 bg-cyan-500 rounded-lg text-white montserrat-semibold hover:bg-cyan-500 transition-colors">
+                Pengaturan
+              </a>
             @endif
           @else
             <a
