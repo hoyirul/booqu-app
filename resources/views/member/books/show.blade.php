@@ -108,7 +108,7 @@
         <span class="w-1 h-1 mx-1.5 bg-gray-500 rounded-full dark:bg-gray-400"></span>
         <span class="text-md font-medium text-gray-900 dark:text-gray-500">{{ \App\Http\Controllers\Member\HomeController::reviews_from_rating($books->id) }} reviews</span>
       </div>
-      <iframe class="w-full aspect-square h-[28rem] sm:h-[36rem] md:h-1/2 mt-4" src="{{ $books->embeded_link }}"></iframe>
+      <iframe class="w-full aspect-square h-[28rem] sm:h-[36rem] md:h-1/2 mt-4" src="{{ $books->embeded_link }}preview"></iframe>
     </div>
   </div>
 @endsection

@@ -98,7 +98,7 @@ class BookReviewController extends Controller
         BookReview::where('id', $id)->update([
             'title' => $request->title,
             'author' => $request->author,
-            'embeded_link' => 'https://www.youtube.com/embed/'.$request->embeded_link,
+            'embeded_link' => $request->embeded_link,
         ]);
 
         return redirect('/v1/bookreviews')->with('success', "data changed successfully!");

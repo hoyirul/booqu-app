@@ -45,7 +45,7 @@
               <td>{{ $item->author }}</td>
               <td>{{ $item->publisher }}</td>
               <td>{{ $item->category->category }}</td>
-              <td><a href="{{ $item->embeded_link }}" class="badge bg-label-primary" target="_blank">Embed</a></td>
+              <td><a href="{{ $item->embeded_link }}preview" class="badge bg-label-primary" target="_blank">Embed</a></td>
               <td><a href="/storage/{{ $item->book_cover }}" class="badge bg-label-secondary" target="_blank">file</a></td>
               <td>
                 <span class="bx bx-star text-warning"></span>
