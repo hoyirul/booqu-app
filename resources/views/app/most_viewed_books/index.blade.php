@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
-  <a class="badge bg-label-primary me-1 float-end" href="/v1/roles/create"
+  {{-- <a class="badge bg-label-primary me-1 float-end" href="/v1/roles/create"
     ><i class="bx bx-plus me-1"></i> Add Data</a
-  >
+  > --}}
   <h4 class="fw-bold @if(!session('success') || !session('danger')) py-3 mb-4 @endif"><span class="text-muted fw-light">Master /</span> {{ $title }}</h4>
 
   <!-- Basic Bootstrap Table -->
