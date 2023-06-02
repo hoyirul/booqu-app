@@ -53,7 +53,7 @@
               </td>
               <td>{{ $item->updated_at }}</td>
               <td>
-                <form action="/v1/books/{{ $item->id }}" onsubmit="return confirm('Are you sure?')" method="post">
+                <form action="/v1/books/{{ $item->id }}" onsubmit="return confirm('Apakah anda yakin, karena data ini menyangkut beberapa tabel dan akan terhapus semua?')" method="post">
                   @csrf
                   @method('DELETE')
                   <a class="badge bg-label-info me-1" href="/v1/books/{{ $item->id }}/edit"

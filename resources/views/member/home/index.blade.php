@@ -133,11 +133,11 @@
 
   {{-- START BANNER --}}
   <div class="bg-gradient-to-tr from-cyan-500 to-green-400 shadow-lg border border-gray-100 rounded-lg px-4 py-6 mx-4 my-4">
-    <div class="overflow-hidden h-40 bg-gray-400 w-40 mt-8 block mx-auto rounded-full">
-      <img src="{{ asset('member/img/section/dediek-photo.jpg') }}" alt="">
+    <div class="overflow-hidden h-40 bg-[#dfe0d1] w-40 mt-8 block mx-auto rounded-full">
+      <img src="{{ asset('member/img/section/dedie.jpeg') }}" alt="">
     </div>
     <p class="text-white px-6 sm:px-6 md:px-10 lg:px-24 xl:px-36 2xl:48 mt-4">
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum repellendus sint maiores debitis numquam fugiat. Id quisquam, velit enim exercitationem quo error est tempora praesentium quam modi reiciendis totam deserunt?"
+      "Jangan pernah berharap jalan hidupmu akan seperti orang yang lain. Perjalanan hidupmu adalah sesuatu yang unik seperti dirimu. Buku adalah cara unik manusia untuk memandang dunia. Buku menjelajahi semua bagian kehidupan, mengubah kehidupan, dan memungkinkan untuk melihat berbagai hal secara berbeda. Buku dapat mengubah hidupmu."
     </p>
     <h3 class="text-white montserrat-bold mt-4">Dediek Tri Kurniawan - Booqu.id</h3>
   </div>

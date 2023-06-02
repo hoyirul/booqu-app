@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Book;
+use App\Models\BookCollection;
+use App\Models\BookRating;
 use App\Models\Category;
+use App\Models\MostViewedBook;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -144,6 +147,9 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
+        BookRating::where('book_id', $id)->delete();
+        BookCollection::where('book_id', $id)->delete();
+        MostViewedBook::where('book_id', $id)->delete();
         Book::where('id', $id)->delete();
         return redirect('/v1/books')->with('success', "data deleted successfully");
     }

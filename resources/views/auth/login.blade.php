@@ -10,7 +10,7 @@
         <a href="/" class="bg-white text-green-600 mt-4 py-2 px-4 rounded-lg font-bold border border-white mb-2 me-2 hover:bg-transparent hover:text-white">
           Read More
         </a>
-        <a href="https://forms.gle/3Hk97f5gy9idBoAi6" class="bg-transparent text-white border border-white mt-4 py-2 px-4 rounded-lg font-bold mb-2 hover:bg-white hover:text-green-600">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdDWhUSKPHcXlZVDU-nkhncHL0hmY7Y8DlK3Ao8qDzYRPAvYg/viewform?usp=sf_link" class="bg-transparent text-white border border-white mt-4 py-2 px-4 rounded-lg font-bold mb-2 hover:bg-white hover:text-green-600">
           Join Now
         </a>
       </div>
@@ -90,7 +90,7 @@
           <a href="/" class="flex w-1/2 bg-green-600 text-white mt-4 py-2 px-4 rounded-lg font-bold border border-white mb-2 me-2 hover:bg-transparent hover:border-green-600 hover:text-green-600">
             Read More
           </a>
-          <a href="https://forms.gle/3Hk97f5gy9idBoAi6" class="flex w-1/2 bg-transparent text-green-600 border border-green-600 mt-4 py-2 px-4 rounded-lg font-bold mb-2 me-2 hover:bg-green-600 hover:text-white">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdDWhUSKPHcXlZVDU-nkhncHL0hmY7Y8DlK3Ao8qDzYRPAvYg/viewform?usp=sf_link" class="flex w-1/2 bg-transparent text-green-600 border border-green-600 mt-4 py-2 px-4 rounded-lg font-bold mb-2 me-2 hover:bg-green-600 hover:text-white">
             Join Now
           </a>
         </div>

@@ -46,17 +46,17 @@
               <td>{{ $item->is_active }}</td>
               <td>{{ $item->updated_at }}</td>
               <td>
-                <form action="/v1/memberships/{{ $item->id }}" onsubmit="return confirm('Are you sure?')" method="post">
+                {{-- <form action="/v1/memberships/{{ $item->id }}" onsubmit="return confirm('Are you sure?')" method="post">
                   @csrf
-                  @method('DELETE')
-                  <a class="badge bg-label-info me-1" href="/v1/memberships/{{ $item->id }}/edit"
-                    ><i class="bx bx-edit-alt me-1"></i> Edit</a
-                  >
-                  <button type="submit" class="badge bg-label-danger me-1 border-0">
+                  @method('DELETE') --}}
+                <a class="badge bg-label-info me-1" href="/v1/memberships/{{ $item->id }}/edit"
+                ><i class="bx bx-edit-alt me-1"></i> Edit</a
+                >
+                  {{-- <button type="submit" class="badge bg-label-danger me-1 border-0">
                     <i class="bx bx-trash me-1"></i>
                   Delete
                   </button>
-                </form>
+                </form> --}}
               </td>
             </tr>
           @endforeach
