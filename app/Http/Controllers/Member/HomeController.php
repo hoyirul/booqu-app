@@ -8,6 +8,7 @@ use App\Models\Book;
 use App\Models\BookCollection;
 use App\Models\BookRating;
 use App\Models\BookReview;
+use App\Models\MostViewedBook;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -71,10 +72,10 @@ class HomeController extends Controller
         $ratings = BookRating::where('user_id', Auth::user()->id)
                     ->where('book_id', $id)
                     ->first();
-        // MostViewedBook::create([
-        //     'book_id' => $books->id,
-        //     'user_id' => Auth::user()->id
-        // ]);
+        MostViewedBook::create([
+            'book_id' => $books->id,
+            'user_id' => Auth::user()->id
+        ]);
         return view('member.books.show', compact([
             'books', 'collections', 'ratings'
         ]));
